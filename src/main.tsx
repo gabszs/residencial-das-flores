@@ -352,6 +352,16 @@ function VideoTour() {
           <span>3. Mapa</span>
           <span>4. Simulação</span>
         </div>
+        <a className="video-map-link" href="#localizacao">
+          Ver localização depois do vídeo <MapPin size={18} />
+        </a>
+      </div>
+      <div className="video-media-column">
+        <div className="video-frame">
+          <video key={activeVideo.id} controls playsInline preload="metadata" poster={heroImage}>
+            <source src={activeVideo.src} type="video/mp4" />
+          </video>
+        </div>
         <div className="video-switcher" aria-label="Escolha o tipo de vídeo">
           {videoOptions.map((option) => (
             <button
@@ -366,16 +376,6 @@ function VideoTour() {
             </button>
           ))}
         </div>
-      </div>
-      <div className="video-media-column">
-        <div className="video-frame">
-          <video key={activeVideo.id} controls playsInline preload="metadata" poster={heroImage}>
-            <source src={activeVideo.src} type="video/mp4" />
-          </video>
-        </div>
-        <a className="video-map-link" href="#localizacao">
-          Ver localização depois do vídeo <MapPin size={18} />
-        </a>
       </div>
       <DownCue href="#localizacao" />
     </section>
