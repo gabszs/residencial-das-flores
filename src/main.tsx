@@ -27,7 +27,9 @@ import './styles.css';
 const asset = (file: string) => `/assets/residencial/${file}`;
 
 const mapUrl = 'https://maps.app.goo.gl/e5KRjsAgb1qcZo3A8';
-const whatsappNumber = '5511947047830';
+const fallbackWhatsAppNumber = '5511947047830';
+const whatsappNumber =
+  import.meta.env.VITE_WHATSAPP_NUMBER?.replace(/\D/g, '') || fallbackWhatsAppNumber;
 const createWhatsAppUrl = (message: string) =>
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 const whatsappUrl = createWhatsAppUrl(

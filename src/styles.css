@@ -674,7 +674,7 @@ h3 {
 
 .video-media-column {
   display: grid;
-  gap: 1rem;
+  gap: clamp(1.45rem, 2vw, 1.85rem);
   justify-items: stretch;
 }
 
@@ -1045,22 +1045,50 @@ h3 {
 
   .video-switcher {
     grid-template-columns: 1fr;
-    order: 1;
+    order: 7;
   }
 
   .video-media-column {
     display: contents;
   }
 
+  .video-tour-section {
+    row-gap: 1.1rem;
+  }
+
+  .video-tour-copy {
+    display: contents;
+  }
+
+  .video-tour-copy .eyebrow {
+    order: 1;
+  }
+
+  .video-tour-copy h2 {
+    order: 2;
+  }
+
+  .video-tour-copy > p:not(.eyebrow) {
+    order: 3;
+  }
+
+  .flow-cues {
+    order: 4;
+  }
+
   .video-map-link {
     justify-self: stretch;
-    order: 3;
+    order: 5;
     width: 100%;
     margin-top: 0;
   }
 
   .video-frame {
-    order: 2;
+    order: 6;
     box-shadow: 0.65rem 0.65rem 0 rgba(183, 198, 83, 0.72);
+  }
+
+  .video-tour-section .section-cue {
+    order: 8;
   }
 }
